@@ -16,12 +16,17 @@ public class SingletonJava {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         Persona miPersona;
-    miPersona = Persona.getSingletonInstance("Hostia","Pilotes",28);
+         singletonjava.Persona miPersona;
+        singletonjava.Persona miPersona2;
+         //creacion de obj
+         miPersona = singletonjava.Persona.getSingletonInstance("juan","Pilotes",28);
+
         System.out.println(miPersona.toString());
-        Persona tuPersona = Persona.getInstance();
+        singletonjava.Persona tuPersona = singletonjava.Persona.getInstance();
         System.out.println(tuPersona.toString());
         System.out.println(miPersona.toString());
+        //este obj no se puede crear ya que existe un objeto creado con id
+        miPersona2 = singletonjava.Persona.getSingletonInstance("Jose","Alonso",28);
     }
     
 }

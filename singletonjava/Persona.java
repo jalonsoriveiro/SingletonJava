@@ -14,7 +14,7 @@ private String nombre;
 private String apellido;
 private int edad;
 private static Persona id;
-
+//construtores
     private Persona(String nombre, String apellido, int edad) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -30,7 +30,8 @@ private static Persona id;
     } 
         return id;   
     }
-    
+    //metodo singleton
+    //Si el id existe es que ya se creo el objeto y no se pueden crear más
     public static Persona getSingletonInstance(String nombre, String apellido, int edad){
     if (id==null){
             id= new Persona(nombre,apellido,edad);
@@ -40,7 +41,8 @@ private static Persona id;
             System.out.println("No se puede crear el objeto "+ nombre+apellido+edad);
         }
         return id;
-    } 
+    }
+    //metodos set
     public void setNombre(String nombre) {
         id.nombre = nombre;
     }
@@ -52,7 +54,7 @@ private static Persona id;
     public void setEdad(int edad) {
         id.edad = edad;
     }
-    
+    //obteenr datos
     @Override
     public String toString() {
         return "Persona :" + "\n nombre = " + nombre + "\napellido = " 
